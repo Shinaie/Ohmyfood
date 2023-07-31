@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Ohmyfood</title>
     <link rel="icon" type="image/svg+xml" href="Assets/Images et textes Ohmyfood/images/logo/ohmyfood@2x.svg"/>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="sass/css/style.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap" rel="stylesheet">     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
-  <body>
+<body>
     <header>
         <nav>
             <img src="Assets/Images et textes Ohmyfood/images/logo/ohmyfood.png" alt="logo Ohmyfood" class="logo">
             <form class="search__town">
                 <div class="location-dot">
-                    <i class="fa-solid fa-location-dot"></i> <!--insertion fa solid google-->
+                    <i class="fa-solid fa-location-dot"></i> 
                 </div>
-               <input class="Ville" type="search" name="ville" placeholder="Paris,Belleville"/>
+               <input class="ville" type="search" name="ville" placeholder="Paris,Belleville"/>
             </form>
         </nav>    
     </header>
@@ -28,29 +27,28 @@
     <section class="hero__section">
         <h1>Réservez le menu qui vous convient</h1><br>
         <p>Découvez des restaurants d'exception, séléctionnés par nos soins.</p>
-        <div>
-            <button class="button__hero" type="button">Explorer nos restaurants </button>
-        </div>  
+        <a href="#restaurants" class="button__hero">Explorer nos restaurants</a>  
     </section>
     <section class="filter__container">
+        <h1>Fonctionnement</h1>
         <div class="filter__content">
             <p>1</p>
             <i class="fa-solid fa-mobile-screen-button"></i>
-            <button class="filter__button" type="button">Choisissez un restaurant</button>
+            <h2>Choisissez un restaurant</h2>
         </div>
-        <div class="filter__dial">
+        <div class="filter__content">
             <p>2</p>
             <i class="fa-solid fa-list-ul"></i>
-            <button class="filter__button" type="button">Composez votre menu</button>
+            <h2>Composez votre menu<h2>
         </div>
-        <div class="filter__tast">
+        <div class="filter__content">
             <p>3</p>
             <i class="fa-solid fa-store"></i>
-            <button class="filter__button" type="button">Dégustez au restaurant</button>
+            <h2>Dégustez au restaurant<h2>
             </i>
         </div>
     </section>
-    <section class="restaurant">
+    <section id="restaurants" class="restaurant">
         <h2 class="restaurant__title">Restaurants</h2>
         <div class="restaurants__cards">
             <article class="card">

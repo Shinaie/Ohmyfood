@@ -1,16 +1,105 @@
+/*Font*/
 * {
+  font-family: "roboto";
   margin: 0;
-  padding: 0;
+}
+
+a {
   text-decoration: none;
 }
-* a {
-  color: blue;
+
+h1 {
+  font-size: 24px;
 }
-* a:visited {
-  color: blue;
+
+h2 {
+  font-size: 16px;
 }
-* a:active {
-  color: blue;
+
+/* header et formulaire */
+.logo {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
+
+.search__town {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 20px;
+  background-color: #F6F6F6;
+  box-shadow: inset 0px 4px #EAEAEA;
+  justify-content: center;
+}
+
+.location-dot {
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+input {
+  font-weight: bold;
+  background-color: #F6F6F6;
+  border: none;
+  align-content: center;
+  font-size: 19px;
+}
+
+.hero__section {
+  background-color: #F6F6F6;
+  text-align: center;
+  padding-bottom: 80px;
+}
+.hero__section p {
+  font-size: 18px;
+  padding: 30px;
+}
+.hero__section a {
+  color: white;
+  padding: 20px;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(#FF79DA, #9356DC);
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card img {
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  align-self: center;
+  max-width: 250px;
+  max-height: 120px;
+  width: 100%;
+}
+
+.filter__content {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  padding: 5px;
+  margin: 15px;
+  font-size: 16px;
+  font-style: bold;
+  background-color: #F6F6F6;
+  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background-color: none;
+  font-size: 16px;
+  margin: 0px 40px 0px 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

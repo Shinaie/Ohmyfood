@@ -1,19 +1,102 @@
 @import "variables";
+@import "mixins";
+@import "function";
+@import "effets";
+@import "button";
 
-
+/*Font*/
 
 * {
-    margin: 0;
-    padding:0;
-    text-decoration: none;
-    & a {
-        color:$header-color-h1;
-    }
-    & a:visited {
-        color:$header-color-h1;
-    }
-    & a:active {
-        color:$header-color-h1;
-    }
+    font-family: 'roboto';
+    margin:0;
 }
 
+a {
+    text-decoration: none;
+}
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+/* header et formulaire */
+
+.logo { 
+    width: 50%;
+    display:block;
+    @include center-box;
+}
+
+.search__town  {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    padding:20px;
+    background-color: $background-color;
+    box-shadow: inset 0px 4px $background-location;
+    justify-content: center;
+  }
+
+.location-dot {
+    font-size: 16px;
+    margin-right:20px;
+}
+
+input {
+    font-weight: bold;
+    background-color: $background-color;
+    border:none;
+    align-content: center;
+    font-size: 19px;
+    }
+
+.hero__section {
+    background-color: $background-color;
+    text-align: center;
+    padding-bottom: 80px;
+        p   {
+            font-size: 18px;
+            padding:30px;
+        }
+        a   {
+            color:white;
+            padding:20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+            background: linear-gradient($secondary-color,$primary-color)
+        }
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  }
+
+.card img {
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    align-self: center;
+    max-width: 250px;
+    max-height: 120px;
+    width:100%;
+}
+
+.filter__content {
+    display:flex;
+    flex-direction: row;
+    @include texture-button;   
+}
+
+button {
+    border:none;
+    text-decoration: none;
+    background-color: none;
+    font-size: 16px;
+    margin:0px 40px 0px 40px;
+}
