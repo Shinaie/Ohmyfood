@@ -1,3 +1,11 @@
+button {
+  border: none;
+  text-decoration: none;
+  background-color: none;
+  font-size: 16px;
+  margin: 0px 40px 0px 40px;
+}
+
 /*Font*/
 * {
   font-family: "roboto";
@@ -6,10 +14,12 @@
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 h1 {
   font-size: 24px;
+  margin: 20px;
 }
 
 h2 {
@@ -29,77 +39,137 @@ h2 {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 20px;
-  background-color: #F6F6F6;
-  box-shadow: inset 0px 4px #EAEAEA;
+  padding: 20px 0px 20px 0px;
+  background-color: #EAEAEA;
+  box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   justify-content: center;
 }
 
 .location-dot {
   font-size: 16px;
-  margin-right: 20px;
+  margin-right: 10px;
+  align-items: center;
 }
 
 input {
   font-weight: bold;
-  background-color: #F6F6F6;
+  background-color: #EAEAEA;
   border: none;
-  align-content: center;
+  padding: 0px;
+  text-align: center;
   font-size: 19px;
+  width: 150px;
 }
 
+/*hero*/
 .hero__section {
+  display: flex;
+  flex-direction: column;
   background-color: #F6F6F6;
   text-align: center;
-  padding-bottom: 80px;
+  padding: 40px 0px 80px 0px;
 }
 .hero__section p {
   font-size: 18px;
   padding: 30px;
+  margin: 20px;
 }
 .hero__section a {
   color: white;
+  margin-top: 15px;
   padding: 20px;
   border-radius: 25px;
-  text-align: center;
+  margin: auto;
   font-weight: bold;
   background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
 }
 
-.card {
-  background-color: white;
-  border-radius: 20px;
-  padding: 5px;
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+/*Fonctionnement*/
+.filter__container {
+  display: flex;
+  flex-direction: column;
 }
-
-.card img {
-  object-fit: cover;
-  border-radius: 20px 20px 0 0;
-  align-self: center;
-  max-width: 250px;
-  max-height: 120px;
-  width: 100%;
-}
-
-.filter__content {
+.filter__container .filter__content {
   display: flex;
   flex-direction: row;
   border-radius: 20px;
-  padding: 5px;
-  margin: 15px;
+  padding: 20px;
+  margin: 0 20px 40px 40px;
   font-size: 16px;
-  font-style: bold;
   background-color: #F6F6F6;
-  filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+  box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
+}
+.filter__container .filter__content p {
+  margin: 10px;
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  background-color: #9356DC;
+  color: white;
+  line-height: 30px;
+  text-align: center;
+}
+.filter__container .filter__content i {
+  margin: 15px;
+  align-items: center;
+}
+.filter__container .filter__content h2 {
+  margin: 15px;
+  text-align: center;
+  white-space: nowrap;
 }
 
-button {
-  border: none;
+/*restaurants*/
+.restaurant {
+  background-color: #F6F6F6;
+}
+.restaurant .card {
+  padding: 0px;
+  background-color: white;
+  border-radius: 20px;
+  margin: 20px 20px 20px 20px;
+}
+.restaurant img {
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 40%;
+}
+
+/*footer*/
+footer {
+  display: flex;
+  background-color: #353535;
+  color: white;
+}
+footer h1 {
+  font-family: "Shrikhand";
+  font-size: 27px;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0px;
+}
+
+.footer__text {
   text-decoration: none;
-  background-color: none;
-  font-size: 16px;
-  margin: 0px 40px 0px 40px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.footer__text a {
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
+
+ul li {
+  padding-bottom: 5px;
+  list-style-position: outside;
 }
 
 /*# sourceMappingURL=style.css.map */
