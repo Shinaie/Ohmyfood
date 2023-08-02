@@ -17,13 +17,8 @@ a {
   color: black;
 }
 
-h1 {
-  font-size: 24px;
-  margin: 20px;
-}
-
 h2 {
-  font-size: 16px;
+  margin: 20px;
 }
 
 /* header et formulaire */
@@ -109,12 +104,14 @@ input {
   color: white;
   line-height: 30px;
   text-align: center;
+  position: relative;
+  top: 0px;
+  right: 46px;
 }
 .filter__container .filter__content i {
-  margin: 15px;
-  align-items: center;
+  margin: 15px; /*centrer le fa */
 }
-.filter__container .filter__content h2 {
+.filter__container .filter__content h3 {
   margin: 15px;
   text-align: center;
   white-space: nowrap;
@@ -122,6 +119,8 @@ input {
 
 /*restaurants*/
 .restaurant {
+  display: flex;
+  flex-direction: column;
   background-color: #F6F6F6;
 }
 .restaurant .card {
@@ -129,12 +128,26 @@ input {
   background-color: white;
   border-radius: 20px;
   margin: 20px 20px 20px 20px;
+  background-color: yellow;
 }
 .restaurant img {
   object-fit: cover;
   border-radius: 20px 20px 0 0;
   width: 100%;
   height: 40%;
+}
+.restaurant .card__nouveau {
+  color: #008766;
+  background-color: #99e2d0;
+  text-align: center;
+  width: 70px;
+  padding: 5px;
+  position: relative;
+  top: 50px;
+  left: 80%;
+}
+.restaurant .card__text {
+  background-color: aquamarine;
 }
 
 /*footer*/
@@ -143,9 +156,9 @@ footer {
   background-color: #353535;
   color: white;
 }
-footer h1 {
+footer h2 {
   font-family: "Shrikhand";
-  font-size: 27px;
+  margin: 20px;
 }
 
 .footer__list {
@@ -153,15 +166,14 @@ footer h1 {
   flex-direction: column;
   list-style: none;
   padding: 0px;
+  margin: 20px;
 }
-
-.footer__text {
+.footer__list .footer__text {
   text-decoration: none;
   margin: 0px;
   box-sizing: border-box;
 }
-
-.footer__text a {
+.footer__list .footer__text a {
   color: white;
   display: flex;
   flex-direction: row;
