@@ -18,7 +18,7 @@ a {
 }
 
 h2 {
-  margin: 20px;
+  margin: 24px;
 }
 
 /* header et formulaire */
@@ -66,7 +66,6 @@ input {
 }
 .hero__section p {
   font-size: 18px;
-  padding: 30px;
   margin: 20px;
 }
 .hero__section a {
@@ -75,7 +74,6 @@ input {
   padding: 20px;
   border-radius: 25px;
   margin: auto;
-  font-weight: bold;
   background: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
 }
@@ -85,9 +83,11 @@ input {
   display: flex;
   flex-direction: column;
 }
-.filter__container .filter__content {
+
+.filter__content {
   display: flex;
   flex-direction: row;
+  position: relative;
   border-radius: 20px;
   padding: 20px;
   margin: 0 20px 40px 40px;
@@ -95,7 +95,13 @@ input {
   background-color: #F6F6F6;
   box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
 }
-.filter__container .filter__content p {
+.filter__content:hover {
+  background-color: rgba(147, 86, 220, 0.2); /*couleur en rgb pour la transparence */
+}
+.filter__content:hover:hover i {
+  color: #9356DC;
+}
+.filter__content p {
   margin: 10px;
   border-radius: 50px;
   width: 30px;
@@ -104,14 +110,14 @@ input {
   color: white;
   line-height: 30px;
   text-align: center;
-  position: relative;
-  top: 0px;
-  right: 46px;
+  position: absolute;
+  top: 23px;
+  left: -25px;
 }
-.filter__container .filter__content i {
-  margin: 15px; /*centrer le fa */
+.filter__content i {
+  margin: 20px; /*centrer le fa */
 }
-.filter__container .filter__content h3 {
+.filter__content h3 {
   margin: 15px;
   text-align: center;
   white-space: nowrap;
@@ -122,19 +128,21 @@ input {
   display: flex;
   flex-direction: column;
   background-color: #F6F6F6;
+  padding: 40px 0 40px 0;
 }
 .restaurant .card {
   padding: 0px;
   background-color: white;
   border-radius: 20px;
   margin: 20px 20px 20px 20px;
-  background-color: yellow;
+  position: relative;
+  height: 257px;
 }
 .restaurant img {
   object-fit: cover;
   border-radius: 20px 20px 0 0;
   width: 100%;
-  height: 40%;
+  max-height: 169px;
 }
 .restaurant .card__nouveau {
   color: #008766;
@@ -142,12 +150,25 @@ input {
   text-align: center;
   width: 70px;
   padding: 5px;
-  position: relative;
-  top: 50px;
-  left: 80%;
+  position: absolute;
+  top: 2%;
+  right: 3%;
 }
 .restaurant .card__text {
-  background-color: aquamarine;
+  margin: 8px;
+}
+.restaurant .card__title {
+  padding-bottom: 10px;
+}
+
+.card__heart {
+  position: relative;
+}
+.card__heart i::before {
+  position: absolute;
+  top: -47px;
+  right: 29px;
+  font-size: 25px;
 }
 
 /*footer*/
@@ -158,7 +179,9 @@ footer {
 }
 footer h2 {
   font-family: "Shrikhand";
-  margin: 20px;
+  font-weight: 400;
+  margin: 18px;
+  font-size: 18px;
 }
 
 .footer__list {
@@ -172,6 +195,14 @@ footer h2 {
   text-decoration: none;
   margin: 0px;
   box-sizing: border-box;
+}
+.footer__list .footer__text .fa-solid__text {
+  display: flex;
+  flex-direction: row;
+}
+.footer__list .footer__text i {
+  padding-right: 20px;
+  width: 20px;
 }
 .footer__list .footer__text a {
   color: white;
