@@ -1,3 +1,65 @@
+@charset "UTF-8";
+/* $Loader double cercle */
+.loader__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  animation: disappear 1500ms ease-in-out forwards;
+  animation-delay: 1000ms;
+}
+.loader__container .loader {
+  border: 6px solid transparent;
+  border-right-color: #9356DC;
+  border-left-color: #FF79DA;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1000ms linear infinite;
+}
+.loader__container .loader::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  border: 6px solid transparent;
+  border-radius: 50%;
+  border-top-color: #9356DC;
+  border-bottom-color: #FF79DA;
+  opacity: 0.6;
+  animation: spinreverse 500ms linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinreverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes disappear {
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
 button {
   border: none;
   text-decoration: none;
@@ -8,7 +70,7 @@ button {
 
 /*Font*/
 * {
-  font-family: "roboto";
+  font-family: "roboto", sans-serif;
   margin: 0;
 }
 
@@ -68,14 +130,18 @@ input {
   font-size: 18px;
   margin: 20px;
 }
-.hero__section a {
+.hero__section .button__hero {
   color: white;
-  margin-top: 15px;
   padding: 20px;
   border-radius: 25px;
   margin: auto;
   background: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
+  transition: all 700ms ease-in-out;
+}
+.hero__section .button__hero:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.4);
 }
 
 /*Fonctionnement*/
@@ -95,10 +161,7 @@ input {
   background-color: #F6F6F6;
   box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
 }
-.filter__content:hover {
-  background-color: rgba(147, 86, 220, 0.2); /*couleur en rgb pour la transparence */
-}
-.filter__content:hover:hover i {
+.filter__content:hover i {
   color: #9356DC;
 }
 .filter__content p {
@@ -163,12 +226,31 @@ input {
 
 .card__heart {
   position: relative;
+  /* i::before{
+      position:absolute;
+      top: -47px;
+      right:29px;
+      font-size: 25px;
+
+      */
 }
-.card__heart i::before {
+.card__heart .fa-regular {
+  /* z-index: 1; */
+}
+.card__heart .fa-regular:hover {
+  color: yellow;
+  transform: translateX(500px);
+}
+.card__heart .fa-regular::after {
+  content: "";
   position: absolute;
-  top: -47px;
-  right: 29px;
-  font-size: 25px;
+}
+.card__heart .fa-solid {
+  color: transparent;
+  /*  z-index:2; */
+}
+.card__heart .fa-solid:hover {
+  opacity: 1;
 }
 
 /*footer*/
@@ -178,7 +260,7 @@ footer {
   color: white;
 }
 footer h2 {
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", sans-serif;
   font-weight: 400;
   margin: 18px;
   font-size: 18px;
@@ -213,6 +295,95 @@ footer h2 {
 ul li {
   padding-bottom: 5px;
   list-style-position: outside;
+}
+
+/*Pages menu*/
+.boutton__return {
+  position: relative;
+  padding: 0;
+}
+.boutton__return i::before {
+  position: absolute;
+  bottom: 30px;
+  left: 35px;
+  font-size: 40px;
+}
+
+.nav-bar__menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.img__menu img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 200px;
+  margin-top: -10px;
+}
+
+.button__menu {
+  color: white;
+  padding: 20px;
+  border-radius: 25px;
+  margin: auto;
+  background: linear-gradient(#FF79DA, #9356DC);
+  box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
+}
+
+.menu__entrées-plats-desserts {
+  display: flex;
+  flex-direction: column;
+  background-color: #EAEAEA;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  position: relative;
+  top: -30px;
+}
+
+.menu__title {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 28px;
+  margin-left: 20%;
+}
+
+.menu__card__heart {
+  position: relative;
+}
+.menu__card__heart i::before {
+  position: absolute;
+  top: -30px;
+  right: 45px;
+  font-size: 25px;
+}
+
+.menu__card {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  padding: 20px;
+}
+.menu__card span {
+  border-bottom: 3px solid #99E2D0;
+}
+
+.menu__card-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F6F6;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
+  animation: start ease-in-out 2000ms 1;
+}
+
+@keyframes start {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
