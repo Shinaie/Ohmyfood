@@ -1,0 +1,27 @@
+/* animations Menu */
+
+.menu__card-1 {
+    animation: start ease-in-out 1000ms 1 both 500ms;
+}
+
+.menu__card-2 {
+    animation: start ease-in-out 1000ms 1 both 1000ms;
+}
+
+.menu__card-3 {
+    animation: start ease-in-out 1000ms 1 both 1500ms;
+}
+
+@keyframes start {
+
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+
+
+    100% {
+        opacity: 1;
+        height: 400px;
+    }
+}

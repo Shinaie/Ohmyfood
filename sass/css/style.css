@@ -1,4 +1,27 @@
 @charset "UTF-8";
+/* animations Menu */
+.menu__card-1 {
+  animation: start ease-in-out 1000ms 1 both 500ms;
+}
+
+.menu__card-2 {
+  animation: start ease-in-out 1000ms 1 both 1000ms;
+}
+
+.menu__card-3 {
+  animation: start ease-in-out 1000ms 1 both 1500ms;
+}
+
+@keyframes start {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+  100% {
+    opacity: 1;
+    height: 400px;
+  }
+}
 /* $Loader double cercle */
 .loader__container {
   display: flex;
@@ -202,6 +225,7 @@ input {
   height: 257px;
 }
 .restaurant img {
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
   width: 100%;
@@ -315,6 +339,7 @@ ul li {
 }
 
 .img__menu img {
+  -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
   max-height: 200px;
@@ -374,12 +399,41 @@ ul li {
   padding: 20px;
   margin: 20px;
   box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.24);
-  animation: start ease-in-out 2000ms 1;
+  position: relative;
 }
 
-@keyframes start {
+.menu__card-content {
+  -webkit-animation: check ease-in-out;
+  animation: check ease-in-out;
+}
+.menu__card-content:hover {
+  -webkit-animation: transform check;
+  animation: transform check;
+}
+
+@-webkit-keyframes check {
   0% {
     opacity: 0;
+    position: absolute;
+    background-color: #99E2D0;
+    right: 0px;
+    height: 102px;
+    top: 0px;
+    border-radius: 0 25px 25px 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes check {
+  0% {
+    opacity: 0;
+    position: absolute;
+    background-color: #99E2D0;
+    right: 0px;
+    height: 102px;
+    top: 0px;
+    border-radius: 0 25px 25px 0;
   }
   100% {
     opacity: 1;
