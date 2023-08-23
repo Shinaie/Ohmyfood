@@ -1,15 +1,15 @@
 /* animations Menu */
 
-.menu__card-1 {
-    animation: start ease-in-out 1000ms 1 both 500ms;
+ .menu__card__starter {
+    animation: start ease-in-out 2000ms 1 both 500ms;
 }
 
-.menu__card-2 {
-    animation: start ease-in-out 1000ms 1 both 1000ms;
+.menu__card__dish {
+    animation: start ease-in-out 2000ms 1 both 1000ms;
 }
 
-.menu__card-3 {
-    animation: start ease-in-out 1000ms 1 both 1500ms;
+.menu__card__dessert {
+    animation: start ease-in-out 2000ms 1 both 1500ms;
 }
 
 @keyframes start {
@@ -19,9 +19,18 @@
         height: 0px;
     }
 
+    75%{
+        opacity:0;
+        height: 100px;
+    }
+
+    90%{
+        opacity:0.75;
+    }
+
 
     100% {
         opacity: 1;
-        height: 400px;
+        height: 125px;
     }
 }

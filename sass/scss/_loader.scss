@@ -1,5 +1,6 @@
 /* $Loader double cercle */
-.loader__container {
+
+/*.loader {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +15,7 @@
     animation-delay: 1000ms;
 
 
-  .loader {
+  &__container {
     border: 6px solid transparent;   
     border-right-color: $primary-color;
     border-left-color:$secondary-color;
@@ -67,4 +68,5 @@
       }
     
   }
+  */
 

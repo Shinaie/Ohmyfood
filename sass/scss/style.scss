@@ -3,7 +3,7 @@
 @import "animations";
 @import "loader";
 @import "button";
-
+@import "media";
 /*Font*/
 
 * {
@@ -18,92 +18,104 @@ a {
 
 
 h2 {
-    margin: 24px;
+    margin: 24px; 
+    }
+
+ul li {
+    padding-bottom: 5px;
+    list-style-position: outside;
+  }
+
+// header et formulaire
+
+.nav {
+    &__logo {
+        width: 170px;
+        display:block;
+        @include center-box;
+    }
 }
-
-/* header et formulaire */
-
-.logo {
-    width: 50%;
-    display:block;
-    @include center-box;
-}
-
-.search__town  {
+    
+.form {
     display: flex;
     flex-direction: row;
     width:100%;
     padding:20px 0px 20px 0px;
     background-color: $background-location;
     box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-    justify-content: center;
-  }
+    justify-content: center; 
+    &__location-dot{
+        font-size: 16px;
+        margin-right:10px;
+        align-items: center;
+    }
+    &__ville{
+        font-weight: bold;
+        background-color: $background-location;
+        border:none;
+        padding:0px;
+        text-align: center;
+        font-size: 19px;
+        width:150px;
+    }
 
-.location-dot {
-    font-size: 16px;
-    margin-right:10px;
-    align-items: center;
+}
   
-}
-
-input {
-    font-weight: bold;
-    background-color: $background-location;
-    border:none;
-    padding:0px;
-    text-align: center;
-    font-size: 19px;
-    width:150px;
-
-}
-    
-  /*hero*/ 
-
-.hero__section {
+.section__hero {
     display: flex;
     flex-direction: column;
     background-color: $background-color;
     text-align: center;
     padding: 40px 0px 80px 0px;
-        & p   {
+        p   {
             font-size: 18px;
             margin:20px;
         }
-
-        & .button__hero {
+        &__button {
             @include button-pink;
             transition: all 700ms ease-in-out ;
-                     
 
         &:hover {
             transform: scale(1.10);
-            box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.40);
-            
+            box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.40);   
         }
-
- 
     }
 }
 
 
-/*Fonctionnement*/ 
+//Fonctionnement
 
-.filter__container {
+.filter {
     display:flex;
     flex-direction: column;
-}
+    &__desktop {
+        @media screen and (min-width:$desktop)
+        {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        }
+} 
+    &__title {
+        @media screen and (min-width:$desktop) {
+        width:100%;
+        margin-left:96px;
+        }   
+    }
 
-.filter__content {
+ &__content {
     display:flex;
     flex-direction: row;
     position:relative;
+    @media screen and (min-width:$desktop) {
+        width: 25%;
+        margin:15px;
+    }
     @include texture-button;   
         &:hover i {
             color:$primary-color;
-        }
-    
-
-          & p {
+        }  
+        p {
             margin:10px;
             border-radius: 50px;
             width:30px;
@@ -115,69 +127,77 @@ input {
             position: absolute;
             top: 23px; 
             left: -25px;
-       }
+          }
         & i {
-            margin: 20px; /*centrer le fa */
-            
- 
-        }  
+            margin: 20px;
+            @media screen and (min-width:$desktop) {
+                margin:18px 4px 4px 4px;
+            }
+        }
+        
         & h3 {
             margin:15px;
             text-align: center;
-            white-space: nowrap;
         }
     }
 
+}
+//restaurants
 
-
-/*restaurants*/
-
-.restaurant {
+.restaurants {
     display: flex;
     flex-direction: column;
     background-color: $background-color;
     padding:40px 0 40px 0;
-
-    & .card {
-        padding:0px;
-        background-color: white;
-        border-radius: 20px;
-        margin:20px 20px 20px 20px;
-        position:relative;
-        height:257px;
+    &__cards {
+        @media screen and (min-width:$desktop) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         }
-
-    & img {
-        -o-object-fit: cover;
-           object-fit: cover;
-        border-radius: 20px 20px 0 0;
-        width:100%;
-        max-height: 169px;       
+        &__card {
+            padding:0px;
+            background-color: white;
+            border-radius: 20px;
+            margin:20px 20px 20px 20px;
+            position:relative;
+            height:257px;
+            @media screen and (min-width:$desktop) {
+                width:45%;
+            }
+            &__new {
+                color:#008766;
+                background-color: #99e2d0;
+                text-align: center;
+                width:70px;
+                padding: 5px;
+                position: absolute;
+                top: 2%; 
+                right: 3%;
+            }
+             & img {
+                -o-object-fit: cover;
+                object-fit: cover;
+                border-radius: 20px 20px 0 0;
+                width:100%;
+                max-height: 169px;       
+            }
+            &__text {
+                margin:8px;
+                &__title {
+                    padding-bottom: 10px;
+                }
+            }
+        &__heart {
+            position:relative;
+            text-align: right;
+            font-size: 25px;
+            bottom:45px;
+            margin:10px;
         }
-
-    & .card__nouveau {
-        color:#008766;
-        background-color: #99e2d0;
-        text-align: center;
-        width:70px;
-        padding: 5px;
-        position: absolute;
-        top: 2%; 
-        right: 3%;
-        
-        }
-
-    .card__text {
-        margin:8px;
     }
-
-    .card__title {
-        padding-bottom: 10px;
     }
 }
-
-.card__heart {
-    position: relative;
 
 /* i::before{
     position:absolute;
@@ -185,10 +205,8 @@ input {
     right:29px;
     font-size: 25px;
 
-    */
-
  .fa-regular {
-    /* z-index: 1; */
+     z-index: 1; 
     
     &:hover {     
         color:yellow;
@@ -202,95 +220,102 @@ input {
 
   .fa-solid {
     color: transparent;
-  /*  z-index:2; */
+    z-index:2;
    
 
     &:hover {
         opacity:1;
-;
     }
         
     }
 }
 
+
+*/
 
 
 
 
 /*footer*/
-footer {
-    display: flex;
-    background-color: #353535;
-    color: white;
-   h2 {
-    font-family: "Shrikhand", sans-serif;
-    font-weight: 400;
-    margin:18px;
-    font-size: 18px;
-  
-   }
-
-}
-
-.footer__list  {
+.footer {
     display: flex;
     flex-direction: column;
-    list-style: none;
-    padding: 0px;
-    margin:20px;
-  
- 
-  .footer__text {
-    text-decoration: none;
-    margin: 0px;
-    box-sizing: border-box;
-
-    .fa-solid__text{
+    background-color: #353535;
+    color: white;  
+   &__title {
+        font-family: "Shrikhand", sans-serif;
+        font-weight: 400;
+        margin:18px;
+        font-size: 18px;
+        @media screen and (min-width:$desktop){ //a voir pour la position relative ?
+            position: relative;
+            text-align: right;
+            top:63px;
+            }
+   }
+   &__list {
         display: flex;
-        flex-direction: row;
-    }
-
-    & i {
-        padding-right:20px;
-        width:20px;
-    }
-  
-  
-   a {
-    color:$main-color;
-    display: flex;
-    flex-direction: row;
-  }
-  }
+        flex-direction: column;
+        list-style: none;
+        padding: 0px;
+        margin:20px;
+        @media screen and (min-width:$desktop) {
+           flex-direction: row; 
+           padding-left: 100px;
+           width:70%;
+        }
+        &__text {
+            text-decoration: none;
+            margin: 0px;
+            box-sizing: border-box;
+            @media screen and (min-width:$desktop) {
+                margin-left:25px;
+            }
+            a {
+                color:$main-color;
+                display: flex;
+                flex-direction: row;
+              }
+            &__fa-solid {
+                display: flex;
+                flex-direction: row;
+            }
+            & i {
+                padding-right:20px;
+                width:20px;
+            }
+        }
+   }
 }
 
-  ul li {
-    padding-bottom: 5px;
-    list-style-position: outside;
-  }
-
-
   /*Pages menu*/
-
-  .boutton__return {
+.main__menu {
+    background-color: $background-location;
+    @media screen and (min-width:$desktop){
+        background-color: $background-color;
+    }
+    
+}
+  .nav__bar { 
+    text-align: center;
+    &__logo {
+        font-size: 30px;
+        padding:20px 0px 0px 35px;
+        width: 65%;
+    }   
+   &__button--return {
         position: relative;
         padding: 0;
+    }
     & i::before {
         position:absolute;
         bottom:30px;
-        left:35px;
-        font-size: 40px;
-       
+        left:10px;
+        font-size: 26px;
     }
   }
-
-  .nav-bar__menu {
-    display:flex;
-    flex-direction: column;
-        
-    }
-     
-  .img__menu {
+  
+  .main__img {
     & img {
         -o-object-fit: cover;
            object-fit: cover;
@@ -299,11 +324,8 @@ footer {
         margin-top: -10px;
     }
   }
-  .button__menu {
-    @include button-pink;
-  }
-
-  .menu__entrées-plats-desserts {
+  
+  .menu {
     display: flex;
     flex-direction: column;
     background-color: $background-location;
@@ -311,98 +333,152 @@ footer {
     border-top-right-radius: 25px;
     position: relative;
     top:-30px;
+        @media screen and (min-width:$desktop){
+        width:70%;
+        margin-left:11%;
+    }
+    &__title {
+       // align-items: center;
+        font-family: "Shrikhand", sans-serif;
+        font-size: 27px;
+        margin-left: 20px;
+            @media screen and (min-width:$desktop){
+                text-align: center;
+                margin-right:20px;
+                padding-top: 20px;
+        }
+    }
+    &__heart {
+        position: relative;
+        & i::before{
+            position:absolute;
+            top: -30px;
+            right:45px;
+            font-size: 25px;
+            @media screen and (min-width:$desktop){
+                position: absolute;
+                right:116px;               
+            } 
+        }
+    }
+    &__card {
+        font-size: 16px;
+        font-weight: normal;
+        margin:0;
+        white-space: nowrap;
+        & span {
+            border-bottom: 3px solid $tertary-color;         
+            }
+            @media screen and (min-width:$desktop){
+                padding-right: 20px;
+                padding-left: 20px;
+        }
+        &__text {
+            margin:0 0 0 20px;
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+            width: 85%;
+            background-color: $background-color;
+            border-radius: 25px;
+            padding:0px 20px 0px 20px;
+            margin:20px 10px 20px 10px;
+            box-shadow: 3px 12px 22px 3px rgba(0,0,0,0.24);
+            line-height: 45px;
+            overflow: hidden;
+            @media screen and (min-width:$desktop){
+                padding:0px 20px 0px 20px;
+                margin:20px 10px 20px 10px;
+            }
+            &:hover + &__checkbox {
+                opacity:1;
+                transform:translateX(-18%);
+                //23px
+                width: 112px;
+                //150px
+                //width:112px; wdith:6% dekstop
+                padding:0px;
+                margin-left: -72px;
+                //-72
+                //margin-left:-75; dekstop
+                overflow: hidden;
+               /* width: 4%;*/
+               @media screen and (min-width:$desktop) {
+                width:84px;
+                margin-left: -57px;
+                transform:translateX(-33%)
+               }
+            
+            }
+            &__title {
+                @include ellipsis;
+            }
+            &:hover, &__text__price {
+                padding-right: 80px;
+            }
+            &__checkbox {
+                overflow: hidden;
+                align-items: center;
+                //padding:0px 20px 0px 20px;
+                margin:20px 0px 20px 0px;
+                border-top-right-radius: 25px;
+                border-bottom-right-radius: 25px;
+                background-color: $tertary-color;
+                //width:0;
+                opacity:0;
+                margin-left:-25px;
+                @media screen and (min-width:$desktop){
+                    padding:0 0 0 0;
+                }
+                & i {
+                    margin-left: 10px;
+                }     
+            }
+            &__text {
+                display:flex;
+                flex-direction: row;
+                padding:0px 0px 0px 0px;
+                justify-content: space-between;
+                &__subtitle {
+                    @include ellipsis;
+                }
+                &__price {
+                    font-weight:  bold;
+                    padding-right: 10px;
+                }
+              
+            }
+
+        }
+
+    }
   }
 
-  .menu__title { 
-        font-family: "Shrikhand", sans-serif;
-        font-size: 28px;
-        margin-left: 20%;
-    }
-
-    .menu__card__heart {
-        position: relative;
-    
-    & i::before{
-        position:absolute;
-        top: -30px;
-        right:45px;
-        font-size: 25px;
-    }
+        
+.menu__card__starter, .menu__card__dish, .menu__card__dessert {
+     display: flex;
+  
 }
 
-.menu__card {
-    font-size: 16px;
-    font-weight: normal;
-    margin:0;
-    padding: 20px;
-
-    & span {
-        border-bottom: 3px solid $tertary-color;
+.menu__card__starter .fa-regular, .menu__card__dish .fa-regular, .menu__card__dessert .fa-regular {
+         color:white;
+        font-size: 26px;
+        text-align: center;
+        line-height: 86px;
     }
-}
 
-
-
-.menu__card-content {
-    display: flex;
-    flex-direction: column;
-    background-color: $background-color;
-    border-radius: 25px;
-    padding:20px;
-    margin:20px;
-    box-shadow: 3px 12px 22px 3px rgba(0,0,0,0.24);
-    position:relative;
+    .button__menu {
+        @include button-pink;
       }
 
-
-
-.menu__card-content {
-    -webkit-animation: check ease-in-out;
-            animation: check ease-in-out;
     
-&:hover {
-    -webkit-animation: transform check;
-            animation: transform check;
-       
-}
-}
-
-@-webkit-keyframes check {
-    0% {
-    opacity:0;
-    position: absolute;
-    background-color: $tertary-color;
-    right:0px;
-    height: 102px;
-    top: 0px;
-    border-radius: 0 25px 25px 0;
-
+.footer__button {
+    text-align: center;
+    padding:10px 0px 50px 0px;
+    background-color: $background-location;
+    &__menu {
+        @include button-pink;
+        padding:15px 60px 15px 60px;
     }
-
-    100% {
-        opacity:1;
-    }
-    
 }
-
-@keyframes check {
-    0% {
-    opacity:0;
-    position: absolute;
-    background-color: $tertary-color;
-    right:0px;
-    height: 102px;
-    top: 0px;
-    border-radius: 0 25px 25px 0;
-
-    }
-
-    100% {
-        opacity:1;
-    }
-    
-}
-
-
-
-
