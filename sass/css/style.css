@@ -1,33 +1,38 @@
 /* animations Menu */
-.menu__card__starter {
-  animation: start ease-in-out 2000ms 1 both 500ms;
+/*.menu__card__starter {
+    animation: start ease-in-out 2000ms 1 both 500ms;
 }
 
 .menu__card__dish {
-  animation: start ease-in-out 2000ms 1 both 1000ms;
+    animation: start ease-in-out 2000ms 1 both 1000ms;
 }
 
 .menu__card__dessert {
-  animation: start ease-in-out 2000ms 1 both 1500ms;
+    animation: start ease-in-out 2000ms 1 both 1500ms;
 }
 
 @keyframes start {
-  0% {
-    opacity: 0;
-    height: 0px;
-  }
-  75% {
-    opacity: 0;
-    height: 100px;
-  }
-  90% {
-    opacity: 0.75;
-  }
-  100% {
-    opacity: 1;
-    height: 125px;
-  }
-}
+
+    0% {
+        opacity: 0;
+        height: 0px;
+    }
+
+    75%{
+        opacity:0;
+        height: 100px;
+    }
+
+    90%{
+        opacity:0.75;
+    }
+
+
+    100% {
+        opacity: 1;
+        height: 125px;
+    }
+}*/
 /* $Loader double cercle */
 /*.loader {
     display: flex;
@@ -91,6 +96,10 @@
 
   @keyframes disappear {
 
+    0% {
+      opacity:1;
+    }
+
     100% { 
       opacity: 0;
       display:none;    
@@ -107,9 +116,10 @@ button {
 }
 
 /*@mixin responsiv {
-    @media screen and (max-width:$desktop)    {}  
-}
-*/
+    @media screen and (max-width:$desktop)    {
+
+    }  
+}*/
 /*Font*/
 * {
   font-family: "roboto", sans-serif;
@@ -498,7 +508,7 @@ ul li {
 .menu__card__content {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 100%;
   background-color: #F6F6F6;
   border-radius: 25px;
   padding: 0px 20px 0px 20px;
@@ -507,50 +517,24 @@ ul li {
   line-height: 45px;
   overflow: hidden;
 }
-@media screen and (min-width: 768px) {
-  .menu__card__content {
-    padding: 0px 20px 0px 20px;
-    margin: 20px 10px 20px 10px;
-  }
-}
-.menu__card__content:hover + .menu__card__content__checkbox {
-  opacity: 1;
-  transform: translateX(-18%);
-  width: 112px;
-  padding: 0px;
-  margin-left: -72px;
-  overflow: hidden;
-  /* width: 4%;*/
-}
-@media screen and (min-width: 768px) {
-  .menu__card__content:hover + .menu__card__content__checkbox {
-    width: 84px;
-    margin-left: -57px;
-    transform: translateX(-33%);
-  }
+.menu__card__content:hover .menu__card__content__checkbox {
+  left: 20px;
 }
 .menu__card__content__title {
-  overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 30px;
 }
-.menu__card__content:hover, .menu__card__content__text__price {
-  padding-right: 80px;
+.menu__card__content:hover .menu__card__content__text__price {
+  left: 10px;
 }
 .menu__card__content__checkbox {
-  overflow: hidden;
-  align-items: center;
-  margin: 20px 0px 20px 0px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
+  position: relative;
   background-color: #99E2D0;
-  opacity: 0;
-  margin-left: -25px;
-}
-@media screen and (min-width: 768px) {
-  .menu__card__content__checkbox {
-    padding: 0 0 0 0;
-  }
+  width: 84px;
+  top: 12px;
+  left: 114px;
+  margin-top: -57px;
+  transition: left 1s ease-in-out;
 }
 .menu__card__content__checkbox i {
   margin-left: 10px;
@@ -558,17 +542,18 @@ ul li {
 .menu__card__content__text {
   display: flex;
   flex-direction: row;
-  padding: 0px 0px 0px 0px;
   justify-content: space-between;
 }
 .menu__card__content__text__subtitle {
-  overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 30px;
+  width: 50%;
 }
 .menu__card__content__text__price {
+  position: relative;
   font-weight: bold;
-  padding-right: 10px;
+  left: 30%;
+  transition: left 1s ease-in-out;
 }
 
 .menu__card__starter, .menu__card__dish, .menu__card__dessert {

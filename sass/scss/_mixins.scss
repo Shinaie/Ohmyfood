@@ -23,7 +23,7 @@
 }
 
 @mixin ellipsis {
-    overflow: hidden;
+    //overflow: hidden;
     text-overflow: ellipsis;
     margin-right: 30px;
 }
