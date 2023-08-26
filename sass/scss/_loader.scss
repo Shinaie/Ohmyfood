@@ -1,6 +1,6 @@
 /* $Loader double cercle */
 
-/*.loader {
+.loader {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,13 +64,19 @@
 
     0% {
       opacity:1;
+      visibility:visible;
+    }
+
+    90% {
+      opacity:1;
+      visibility:visible;
     }
  
     100% { 
       opacity: 0;
-      display:none;    
+      visibility:hidden;    
       }
     
   }
-  */
+  
 

@@ -19,6 +19,9 @@ a {
 
 h2 {
     margin: 24px; 
+    @media screen and (min-width:$desktop) {
+        margin:0px;
+    }
     }
 
 ul li {
@@ -69,7 +72,7 @@ ul li {
     padding: 40px 0px 80px 0px;
         p   {
             font-size: 18px;
-            margin:20px;
+            margin:0px 20px 20px 20px;
         }
         &__button {
             @include button-pink;
@@ -83,23 +86,27 @@ ul li {
 }
 
 
-//Fonctionnement
+/*Fonctionnement */
 
 .filter {
     display:flex;
     flex-direction: column;
+    justify-content: space-between;
+        @media screen and (min-width:$desktop) {
+            padding:20px 108px 20px 108px;
+        }
     &__desktop {
         @media screen and (min-width:$desktop)
         {
         display:flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         }
 } 
     &__title {
         @media screen and (min-width:$desktop) {
         width:100%;
-        margin-left:96px;
+        //margin:20px 0px 20px 0px;
         }   
     }
 
@@ -136,19 +143,34 @@ ul li {
         }
         
         & h3 {
+            font-size: 16px;
             margin:15px;
             text-align: center;
+            white-space: nowrap;
+            @media screen and (min-width:$desktop) {
+                white-space:normal;
+            }
         }
     }
 
 }
-//restaurants
+/*restaurants*/
 
 .restaurants {
     display: flex;
     flex-direction: column;
     background-color: $background-color;
     padding:40px 0 40px 0;
+    @media screen and (min-width:$desktop) {
+        padding:20px 108px 20px 108px;
+        
+    }
+    &__title {
+    @media screen and (min-width:$desktop) {
+       // padding-left:108px;
+
+    }
+}
     &__cards {
         @media screen and (min-width:$desktop) {
         display: flex;
@@ -164,6 +186,8 @@ ul li {
             height:257px;
             @media screen and (min-width:$desktop) {
                 width:45%;
+
+
             }
             &__new {
                 color:#008766;
@@ -188,53 +212,46 @@ ul li {
                     padding-bottom: 10px;
                 }
             }
-        &__heart {
-            position:relative;
-            text-align: right;
-            font-size: 25px;
-            bottom:45px;
-            margin:10px;
         }
-    }
     }
 }
 
-/* i::before{
-    position:absolute;
-    top: -47px;
-    right:29px;
-    font-size: 25px;
+.restaurants {
+    &__cards {
+        &__card {
+            &__heart {
+                cursor: pointer;
+                position:absolute;
+                width:24px;
+                height: 24px;
+                bottom:30px;
+                right:24px;  
 
- .fa-regular {
-     z-index: 1; 
-    
-    &:hover {     
-        color:yellow;
-        transform: translateX(500px)
+                .fa-heart {
+                    font-size: 24px;
+                    transition: opacity 1s ease-in-out; 
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+                .fa-regular {
+                    position:absolute;
+                    top:0;
+                    left:0;
+                }
+                .fa-solid {
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    opacity:0;
+                    background: linear-gradient($primary-color,$secondary-color);
+                    -webkit-background-clip: text;
+	                -webkit-text-fill-color: transparent;
+                 }
+            }
         }
-    &::after {
-        content:"";
-        position:absolute;   
-    }
- }
-
-  .fa-solid {
-    color: transparent;
-    z-index:2;
-   
-
-    &:hover {
-        opacity:1;
-    }
-        
     }
 }
-
-
-*/
-
-
-
 
 /*footer*/
 .footer {
@@ -261,8 +278,8 @@ ul li {
         margin:20px;
         @media screen and (min-width:$desktop) {
            flex-direction: row; 
-           padding-left: 100px;
-           width:70%;
+           justify-content: flex-end;
+           margin-right: 200px;
         }
         &__text {
             text-decoration: none;
@@ -299,9 +316,8 @@ ul li {
   .nav__bar { 
     text-align: center;
     &__logo {
-        font-size: 30px;
-        padding:20px 0px 0px 35px;
-        width: 65%;
+        padding:20px 0px 0px 10px;
+        width: 200px;
     }   
    &__button--return {
         position: relative;
@@ -335,10 +351,10 @@ ul li {
     top:-30px;
         @media screen and (min-width:$desktop){
         width:70%;
-        margin-left:11%;
+        padding:0 108px 0 108px;
+        margin-left:10%;
     }
     &__title {
-       // align-items: center;
         font-family: "Shrikhand", sans-serif;
         font-size: 27px;
         margin-left: 20px;
@@ -349,19 +365,47 @@ ul li {
         }
     }
     &__heart {
-        position: relative;
-        & i::before{
-            position:absolute;
-            top: -30px;
-            right:45px;
-            font-size: 25px;
+        cursor: pointer;
+        position: absolute;
+        width:24px;
+        height:24px;
+        top:8px;
+        right: 40px;
             @media screen and (min-width:$desktop){
                 position: absolute;
-                right:116px;               
-            } 
+                right:260px;   
+                top:25px;
+                }
+
+        .fa-heart {
+            font-size: 24px;  
+            transition: opacity 500ms ease-in-out;          
+            &:hover {
+                opacity:1;
+            }
         }
-    }
-    &__card {
+        .fa-regular {
+            position:absolute;
+            top:0;
+            left:0;
+            
+            }
+
+        .fa-solid {
+            position: absolute;
+            top:0;
+            left:0;
+            opacity:0;
+            background: linear-gradient($primary-color, $secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+
+            }
+            
+        }
+                              
+     &__card {
         font-size: 16px;
         font-weight: normal;
         margin:0;
@@ -374,48 +418,51 @@ ul li {
                 padding-left: 20px;
         }
         &__text {
-            margin:0 0 0 20px;
+            margin:10px;
+            font-weight: normal;
         }
         &__content {
             display: flex;
             flex-direction: column;
             width: 100%;
             background-color: $background-color;
-            border-radius: 25px;
+            border-radius: 10px;
             padding:0px 20px 0px 20px;
             margin:20px 10px 20px 10px;
-            box-shadow: 3px 12px 22px 3px rgba(0,0,0,0.24);
+            box-shadow: 0px 4px 15px 3px rgba(0,0,0,0.10);
             line-height: 45px;
             overflow: hidden;
             @media screen and (min-width:$desktop){
 
             }
             &:hover &__checkbox {
-                //opacity: 1;
-                left:20px;
-                @media screen and (min-width:$desktop) {
- 
-               }
+               left:20px;
+               width:110px;
+               @media screen and (min-width:$desktop) {
+                 
+                }
             }
             &__title {
-                @include ellipsis;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
-            &:hover &__text__price {
-                left:10px;
 
-            }
+            &:hover &__title {
+               margin-right: 80px;
+
+            }        
+  
             &__checkbox {
-                //opacity:0;
-                position: relative;
+               position: relative;
                 background-color: $tertary-color;
-                width:84px;
+                width:0px;
                 top:12px;
                 left:114px;
-                //left:20px;
                 margin-top: -57px;
-                transition: left 1s ease-in-out;
+                transition :width 1500ms ease-in-out;
                 @media screen and (min-width:$desktop){
-                          }
+                     }
                 & i {
                     margin-left: 10px;
                 }     
@@ -423,24 +470,23 @@ ul li {
             &__text {
                 display:flex;
                 flex-direction: row;
-                justify-content: space-between;
-                &__subtitle {
-                    @include ellipsis;
-                    width:50%;
+                   &__subtitle {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width:100%;
                 }
                 &__price {
                     position: relative;
                     font-weight:  bold;
-                    left:30%;
-                    transition: left 1s ease-in-out;
-                }
-              
+                    }             
             }
 
         }
 
     }
   }
+
 
 .menu__card__starter, .menu__card__dish, .menu__card__dessert {
      display: flex;
@@ -450,21 +496,24 @@ ul li {
 .menu__card__starter .fa-regular, .menu__card__dish .fa-regular, .menu__card__dessert .fa-regular {
         color:white;
         font-size: 26px;
-        text-align: center;
-        line-height: 86px;
+        line-height: 92px;
+        margin-left: 26px;
     }
-
-    .button__menu {
-        @include button-pink;
-      }
 
     
 .footer__button {
     text-align: center;
-    padding:10px 0px 50px 0px;
+    padding:50px 0px 50px 0px;
     background-color: $background-location;
     &__menu {
         @include button-pink;
         padding:15px 60px 15px 60px;
+        transition: all 700ms ease-in-out ;
+        &:hover {
+            transform: scale(1.10);
+            box-shadow: 3px 12px 22px 3px rgba(0, 0, 0, 0.40);
     }
 }
+}
+
+
