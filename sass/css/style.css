@@ -28,7 +28,6 @@
     height: 125px;
   }
 }
-/*Animation heart */
 /* $Loader double cercle */
 .loader {
   display: flex;
@@ -106,11 +105,6 @@ button {
   margin: 0px 40px 0px 40px;
 }
 
-/*@mixin responsiv {
-    @media screen and (max-width:$desktop)    {
-
-    }  
-}*/
 /*Font*/
 * {
   font-family: "roboto", sans-serif;
