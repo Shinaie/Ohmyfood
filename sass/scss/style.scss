@@ -114,9 +114,11 @@ ul li {
     display:flex;
     flex-direction: row;
     position:relative;
+    align-items: center;
     @media screen and (min-width:$desktop) {
-        width: 25%;
+        width: 40%;
         margin:15px;
+        white-space: nowrap;
     }
     @include texture-button;   
         &:hover i {
@@ -132,13 +134,14 @@ ul li {
             line-height: 30px;
             text-align: center;
             position: absolute;
-            top: 23px; 
+            top: 12px; 
             left: -25px;
           }
         & i {
-            margin: 20px;
+            //margin: 20px;
+            margin:0px 5px 0px 40px;
             @media screen and (min-width:$desktop) {
-                margin:18px 4px 4px 4px;
+                //margin:18px 4px 4px 4px;
             }
         }
         
@@ -148,7 +151,7 @@ ul li {
             text-align: center;
             white-space: nowrap;
             @media screen and (min-width:$desktop) {
-                white-space:normal;
+            white-space:normal;
             }
         }
     }
@@ -162,12 +165,14 @@ ul li {
     background-color: $background-color;
     padding:40px 0 40px 0;
     @media screen and (min-width:$desktop) {
-        padding:20px 108px 20px 108px;
+       // padding:20px 108px 20px 108px;
+       padding-left: 108px;
+       padding-right: 108px;
         
     }
     &__title {
     @media screen and (min-width:$desktop) {
-       // padding-left:108px;
+       padding-bottom:20px;
 
     }
 }
@@ -176,6 +181,10 @@ ul li {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
+        column-gap: 100px;
+        row-gap: 50px;
+        
         }
         &__card {
             padding:0px;
@@ -184,9 +193,11 @@ ul li {
             margin:20px 20px 20px 20px;
             position:relative;
             height:257px;
+            width:90%;
             @media screen and (min-width:$desktop) {
-                width:45%;
-
+                width:43%;
+                margin:0;
+               
 
             }
             &__new {
@@ -264,7 +275,8 @@ ul li {
         font-weight: 400;
         margin:18px;
         font-size: 18px;
-        @media screen and (min-width:$desktop){ //a voir pour la position relative ?
+        cursor: pointer;
+        @media screen and (min-width:$desktop){ 
             position: relative;
             text-align: right;
             top:63px;
@@ -276,6 +288,7 @@ ul li {
         list-style: none;
         padding: 0px;
         margin:20px;
+        z-index: 1;
         @media screen and (min-width:$desktop) {
            flex-direction: row; 
            justify-content: flex-end;
@@ -427,7 +440,7 @@ ul li {
             width: 100%;
             background-color: $background-color;
             border-radius: 10px;
-            padding:0px 20px 0px 20px;
+            padding-left: 20px;
             margin:20px 10px 20px 10px;
             box-shadow: 0px 4px 15px 3px rgba(0,0,0,0.10);
             line-height: 45px;
@@ -436,8 +449,7 @@ ul li {
 
             }
             &:hover &__checkbox {
-               left:20px;
-               width:110px;
+               width:100px;
                @media screen and (min-width:$desktop) {
                  
                 }
@@ -458,9 +470,8 @@ ul li {
                 background-color: $tertary-color;
                 width:0px;
                 top:12px;
-                left:114px;
                 margin-top: -57px;
-                transition :width 1500ms ease-in-out;
+                transition :width 0.5s ease-in-out;
                 @media screen and (min-width:$desktop){
                      }
                 & i {
@@ -479,11 +490,23 @@ ul li {
                 &__price {
                     position: relative;
                     font-weight:  bold;
+                    margin-right: 10px;
                     }             
             }
 
         }
 
+    }
+  }
+
+  @keyframes Cocheplat {
+    0%{ 
+        width: 0px;
+    }
+
+
+    100% {
+        width:110px;
     }
   }
 
