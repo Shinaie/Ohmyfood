@@ -16,6 +16,7 @@ a {
     color:black
 }
 
+/* General main */
 
 h2 {
     margin: 24px; 
@@ -23,6 +24,8 @@ h2 {
         margin:0px;
     }
     }
+
+/* General footer */
 
 ul li {
     padding-bottom: 5px;
@@ -95,18 +98,19 @@ ul li {
         @media screen and (min-width:$desktop) {
             padding:20px 108px 20px 108px;
         }
+
     &__desktop {
         @media screen and (min-width:$desktop)
         {
         display:flex;
         flex-direction: row;
         justify-content: space-between;
+        gap:20px;
         }
 } 
     &__title {
         @media screen and (min-width:$desktop) {
         width:100%;
-        //margin:20px 0px 20px 0px;
         }   
     }
 
@@ -138,10 +142,9 @@ ul li {
             left: -25px;
           }
         & i {
-            //margin: 20px;
             margin:0px 5px 0px 40px;
             @media screen and (min-width:$desktop) {
-                //margin:18px 4px 4px 4px;
+
             }
         }
         
@@ -165,25 +168,28 @@ ul li {
     background-color: $background-color;
     padding:40px 0 40px 0;
     @media screen and (min-width:$desktop) {
-       // padding:20px 108px 20px 108px;
        padding-left: 108px;
        padding-right: 108px;
         
     }
     &__title {
-    @media screen and (min-width:$desktop) {
-       padding-bottom:20px;
 
+    @media screen and (min-width:$tablette) {
+        padding-bottom: 20px;
     }
-}
+ 
+    }
     &__cards {
+
+        @media screen and (min-width:$tablette) {
+            display: flex;
+            flex-direction:row;
+            flex-wrap:wrap ;
+            row-gap: 50px;
+            justify-content: space-between;
+        }
         @media screen and (min-width:$desktop) {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        column-gap: 100px;
-        row-gap: 50px;
+            column-gap: 100px;
         
         }
         &__card {
@@ -194,6 +200,10 @@ ul li {
             position:relative;
             height:257px;
             width:90%;
+
+            @media screen and (min-width:$tablette){
+                width:40%;
+            }
             @media screen and (min-width:$desktop) {
                 width:43%;
                 margin:0;
@@ -276,7 +286,7 @@ ul li {
         margin:18px;
         font-size: 18px;
         cursor: pointer;
-        @media screen and (min-width:$desktop){ 
+        @media screen and (min-width:$tablette){ 
             position: relative;
             text-align: right;
             top:63px;
@@ -289,7 +299,7 @@ ul li {
         padding: 0px;
         margin:20px;
         z-index: 1;
-        @media screen and (min-width:$desktop) {
+        @media screen and (min-width:$tablette) {
            flex-direction: row; 
            justify-content: flex-end;
            margin-right: 200px;
@@ -298,7 +308,7 @@ ul li {
             text-decoration: none;
             margin: 0px;
             box-sizing: border-box;
-            @media screen and (min-width:$desktop) {
+            @media screen and (min-width:$tablette) {
                 margin-left:25px;
             }
             a {
@@ -321,7 +331,7 @@ ul li {
   /*Pages menu*/
 .main__menu {
     background-color: $background-location;
-    @media screen and (min-width:$desktop){
+    @media screen and (min-width:$tablette){
         background-color: $background-color;
     }
     
@@ -349,7 +359,7 @@ ul li {
         -o-object-fit: cover;
            object-fit: cover;
         width:100%;
-        max-height: 200px;  
+        max-height: 400px;  
         margin-top: -10px;
     }
   }
@@ -362,20 +372,28 @@ ul li {
     border-top-right-radius: 25px;
     position: relative;
     top:-30px;
+        @media screen and (min-width:$tablette) {
+            width:60%;
+            padding: 0 108px 0 108px;
+            margin-left: 5%;
+        }
+
         @media screen and (min-width:$desktop){
-        width:70%;
-        padding:0 108px 0 108px;
-        margin-left:10%;
+            width:70%;
+            padding:0 108px 0 108px;
+            margin-left:7%;
     }
     &__title {
         font-family: "Shrikhand", sans-serif;
         font-size: 27px;
         margin-left: 20px;
-            @media screen and (min-width:$desktop){
+            @media screen and (min-width:$tablette) {
                 text-align: center;
-                margin-right:20px;
+                margin-right: 20px;
                 padding-top: 20px;
-        }
+                
+            }
+
     }
     &__heart {
         cursor: pointer;
@@ -384,6 +402,11 @@ ul li {
         height:24px;
         top:8px;
         right: 40px;
+            @media screen and (min-width:$tablette){
+                position:absolute;
+                right: 100px;
+                top:25px;
+            }
             @media screen and (min-width:$desktop){
                 position: absolute;
                 right:260px;   
@@ -426,6 +449,12 @@ ul li {
         & span {
             border-bottom: 3px solid $tertary-color;         
             }
+
+            @media screen and (min-width:$tablette) {
+                padding-right:20px;
+                padding-left: 20px;
+                
+            }
             @media screen and (min-width:$desktop){
                 padding-right: 20px;
                 padding-left: 20px;
@@ -445,14 +474,9 @@ ul li {
             box-shadow: 0px 4px 15px 3px rgba(0,0,0,0.10);
             line-height: 45px;
             overflow: hidden;
-            @media screen and (min-width:$desktop){
-
-            }
+  
             &:hover &__checkbox {
                width:100px;
-               @media screen and (min-width:$desktop) {
-                 
-                }
             }
             &__title {
                 text-overflow: ellipsis;
@@ -472,8 +496,7 @@ ul li {
                 top:12px;
                 margin-top: -57px;
                 transition :width 0.5s ease-in-out;
-                @media screen and (min-width:$desktop){
-                     }
+
                 & i {
                     margin-left: 10px;
                 }     

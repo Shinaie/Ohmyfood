@@ -1,3 +1,5 @@
+/* Color */
+/* Media tablette/mobile */
 /* animations Menu */
 .menu__card__starter {
   animation: start ease-in-out 2000ms 1 both 500ms;
@@ -100,7 +102,6 @@
 button {
   border: none;
   text-decoration: none;
-  background-color: none;
   font-size: 16px;
   margin: 0px 40px 0px 40px;
 }
@@ -116,15 +117,17 @@ a {
   color: black;
 }
 
+/* General main */
 h2 {
   margin: 24px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   h2 {
     margin: 0px;
   }
 }
 
+/* General footer */
 ul li {
   padding-bottom: 5px;
   list-style-position: outside;
@@ -194,19 +197,20 @@ ul li {
   flex-direction: column;
   justify-content: space-between;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .filter {
     padding: 20px 108px 20px 108px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .filter__desktop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 20px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .filter__title {
     width: 100%;
   }
@@ -224,7 +228,7 @@ ul li {
   background-color: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .filter__content {
     width: 40%;
     margin: 15px;
@@ -256,7 +260,7 @@ ul li {
   text-align: center;
   white-space: nowrap;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .filter__content h3 {
     white-space: normal;
   }
@@ -269,7 +273,7 @@ ul li {
   background-color: #F6F6F6;
   padding: 40px 0 40px 0;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .restaurants {
     padding-left: 108px;
     padding-right: 108px;
@@ -285,9 +289,13 @@ ul li {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    column-gap: 100px;
     row-gap: 50px;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurants__cards {
+    column-gap: 100px;
   }
 }
 .restaurants__cards__card {
@@ -300,6 +308,11 @@ ul li {
   width: 90%;
 }
 @media screen and (min-width: 768px) {
+  .restaurants__cards__card {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1024px) {
   .restaurants__cards__card {
     width: 43%;
     margin: 0;
@@ -451,7 +464,7 @@ ul li {
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
-  max-height: 200px;
+  max-height: 400px;
   margin-top: -10px;
 }
 
@@ -466,9 +479,16 @@ ul li {
 }
 @media screen and (min-width: 768px) {
   .menu {
+    width: 60%;
+    padding: 0 108px 0 108px;
+    margin-left: 5%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menu {
     width: 70%;
     padding: 0 108px 0 108px;
-    margin-left: 10%;
+    margin-left: 7%;
   }
 }
 .menu__title {
@@ -492,6 +512,13 @@ ul li {
   right: 40px;
 }
 @media screen and (min-width: 768px) {
+  .menu__heart {
+    position: absolute;
+    right: 100px;
+    top: 25px;
+  }
+}
+@media screen and (min-width: 1024px) {
   .menu__heart {
     position: absolute;
     right: 260px;
@@ -529,6 +556,12 @@ ul li {
   border-bottom: 3px solid #99E2D0;
 }
 @media screen and (min-width: 768px) {
+  .menu__card {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
   .menu__card {
     padding-right: 20px;
     padding-left: 20px;
